@@ -9,7 +9,7 @@ const Home = () => {
     if (!isFetched) {
       dispatch(fetchCurrencies());
     }
-  }, []);
+  }, [dispatch, isFetched]);
   return (
     <div>Home</div>
   );

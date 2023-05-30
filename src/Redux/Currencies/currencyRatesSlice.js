@@ -4,16 +4,15 @@ import axios from 'axios';
 const initialState = {
   Data: [],
   loading: false,
-  isFetched: false,
-  Error: null,
+  dataFetched: false,
 };
 
-export const fetchRates = createAsyncThunk('rates/fetchRates', async (action) => {
+export const fetchRates = createAsyncThunk('rates/fetchRates', async () => {
   try {
-    const URL = `https://rest.coinapi.io/v1/exchangerate/${action.payload}?invert=false`;
+    const URL = 'https://apiv2.bitcoinaverage.com/constants/exchangerates/global';
 
     const config = {
-      headers: { 'X-CoinAPI-Key': 'E745E079-5EE8-4926-85BC-9FC113C38AF4' },
+      headers: { 'x-ba-key': 'MDZkZTBjZGYwMWJiNGJhNTg5ODIyNzMwM2FkY2E1Yzc' },
     };
 
     const res = await axios.get(URL, config);
@@ -30,13 +29,10 @@ const currencyRatesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchRates.fulfilled, (state, action) => {
-        const required = ['BTC', 'ETH', 'USDT', 'LTC', 'DOGE', 'TES'];
-        const fetched = action.payload;
-        const filtered = fetched.filter((each) => required.includes(each.asset_id));
-        state.Data = filtered;
+        state.Data = action.payload;
         state.loading = false;
         state.Error = null;
-        state.isFetched = true;
+        state.dataFetched = true;
       })
       .addCase(fetchRates.rejected, (state, action) => {
         state.Error = action.payload;

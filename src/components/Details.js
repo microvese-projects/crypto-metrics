@@ -24,6 +24,13 @@ const Details = () => {
         <h3>{header.name}</h3>
         <p>{header.count}</p>
       </div>
+      <div className="homeSubHeading">
+        <h3>
+          Stats for
+          {' '}
+          {header.name}
+        </h3>
+      </div>
       <form
         onSubmit={(e) => { e.preventDefault(); }}
       >

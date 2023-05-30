@@ -1,4 +1,4 @@
-.App{
+.App {
   overflow-x: hidden;
   background-color: #e54f8a;
   min-height: 100vh;
@@ -21,9 +21,9 @@
 }
 
 .homeSubHeading {
-  background-color: rgba(113, 12, 52, 0.8);
+  background-color: rgba(113, 12, 52, 0.7);
   color: aliceblue;
-  padding: 10px;
+  padding: 5px;
 }
 
 .homeCardsContainer {

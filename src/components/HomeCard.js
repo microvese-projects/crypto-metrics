@@ -4,17 +4,18 @@ import PropTypes from 'prop-types';
 const HomeCard = ({
   name, data,
 }) => (
-  <div>
+  <div className="homecard">
     <h3>{name}</h3>
-    <p>{Object.keys(data.rates).length}</p>
+    <p>{data.length}</p>
   </div>
 );
 
 HomeCard.propTypes = {
   name: PropTypes.string.isRequired,
   data: PropTypes.arrayOf(PropTypes.shape({
-    time: PropTypes.string,
-    rates: PropTypes.objectOf(PropTypes.string),
+    id: PropTypes.string,
+    name: PropTypes.string,
+    rate: PropTypes.string,
   })).isRequired,
 };
 

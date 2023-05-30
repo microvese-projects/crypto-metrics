@@ -1,3 +1,12 @@
 body {
   color: black;
 }
+
+.homecard {
+  cursor: pointer;
+  padding: 20px;
+}
+
+.homecard:hover {
+  border: 1px solid #710c34
+}

@@ -29,7 +29,19 @@ const currencyRatesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchRates.fulfilled, (state, action) => {
-        state.globalRates = action.payload;
+        const data = action.payload.rates;
+        const actualData = [];
+        const keys = Object.keys(data);
+
+        keys.forEach((key) => {
+          actualData.push({
+            id: key,
+            name: `${data[key].name}`,
+            rate: `${data[key].rate}`,
+          });
+        });
+
+        state.globalRates = actualData;
         state.loading = false;
         state.Error = null;
         state.dataFetched = true;

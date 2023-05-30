@@ -1,12 +1,134 @@
-body {
-  color: black;
+.App{
+  overflow-x: hidden;
+  background-color: #e54f8a;
+  min-height: 100vh;
+}
+
+.stats {
+  background-image: linear-gradient(80deg, #e54f8a, rgba(113, 12, 52, 0.8)), url('../public/images/currency.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 150px;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  padding-right: 20px;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: rgba(113, 12, 52, 0.5);
+}
+
+.homeSubHeading {
+  background-color: rgba(113, 12, 52, 0.8);
+  color: aliceblue;
+  padding: 10px;
+}
+
+.homeCardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 
 .homecard {
   cursor: pointer;
+  min-height: 150px;
+  width: 100%;
   padding: 20px;
+  border: none;
+  box-shadow: 0 0 3px 1px #710c34;
+  background-color: #710c34;
+  color: #fff;
 }
 
-.homecard:hover {
-  border: 1px solid #710c34;
+ul {
+  list-style: none;
+}
+
+.navbar {
+  max-width: 100vw;
+  background-color: #e54f8a;
+  color: #fff;
+  padding: 10px 5px;
+  box-shadow: 0 0 10px 1px #710c34;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 20px;
+}
+
+.title {
+  width: 80%;
+  text-align: center;
+}
+
+li svg {
+  height: 30px;
+}
+
+.backHome {
+  display: flex;
+  align-items: center;
+}
+
+.backHome a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.list li {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  height: 50px;
+  color: #fff;
+  font-weight: bold;
+  align-items: center;
+  padding-inline: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.list li:nth-child(Even) {
+  background-color: #710c34;
+}
+
+.name {
+  width: 70%;
+}
+
+form {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  display: none;
+}
+
+#search {
+  width: 300px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+  border: none;
+}
+
+.more {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.more svg {
+  height: 20px;
+  cursor: pointer;
 }

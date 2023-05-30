@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-  Data: [],
+  globalRates: [],
   loading: false,
   dataFetched: false,
 };
@@ -29,7 +29,7 @@ const currencyRatesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchRates.fulfilled, (state, action) => {
-        state.Data = action.payload;
+        state.globalRates = action.payload;
         state.loading = false;
         state.Error = null;
         state.dataFetched = true;

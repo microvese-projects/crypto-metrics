@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-  Data: [],
+  localRates: [],
   loading: false,
   isFetched: false,
   Error: null,
@@ -10,7 +10,7 @@ const initialState = {
 
 export const fetchCurrencies = createAsyncThunk('currencies/fetchCurrencies', async () => {
   try {
-    const URL = 'https://apiv2.bitcoinaverage.com/info/exchanges/ticker';
+    const URL = 'https://apiv2.bitcoinaverage.com/constants/exchangerates/local';
 
     const config = {
       headers: { 'x-ba-key': 'MDZkZTBjZGYwMWJiNGJhNTg5ODIyNzMwM2FkY2E1Yzc' },
@@ -30,7 +30,7 @@ const currenciesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchCurrencies.fulfilled, (state, action) => {
-        state.Data = action.payload.exchanges;
+        state.localRates = action.payload;
         state.loading = false;
         state.Error = null;
         state.isFetched = true;

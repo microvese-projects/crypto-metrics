@@ -6,14 +6,14 @@ import HomeCard from './HomeCard';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { isFetched, Data } = useSelector((state) => state.currencies);
+  const { isFetched, localRates } = useSelector((state) => state.currencies);
   useEffect(() => {
     if (!isFetched) {
       dispatch(fetchCurrencies());
     }
   }, [dispatch, isFetched]);
 
-  const { dataFetched } = useSelector((state) => state.rates);
+  const { dataFetched, globalRates } = useSelector((state) => state.rates);
 
   useEffect(() => {
     if (!dataFetched) {
@@ -24,7 +24,8 @@ const Home = () => {
   return (
     <div>
       Home page
-      <HomeCard name="Crypto" data={Data} />
+      <HomeCard name="Local Market" data={localRates} />
+      <HomeCard name="Global Market" data={globalRates} />
     </div>
   );
 };

@@ -1,14 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { change } from '../Redux/Currencies/displayedSlice';
 
 const HomeCard = ({
   name, data,
-}) => (
-  <div className="homecard">
-    <h3>{name}</h3>
-    <p>{data.length}</p>
-  </div>
-);
+}) => {
+  const dispatch = useDispatch();
+  return (
+    <Link to="details">
+      <button
+        type="button"
+        className="homecard"
+        onClick={() => dispatch(change({ data, name }))}
+      >
+        <h3>
+          {name}
+          {' '}
+          currencies
+        </h3>
+        <p>
+          {data.length}
+          {' '}
+          currencies
+        </p>
+      </button>
+    </Link>
+  );
+};
 
 HomeCard.propTypes = {
   name: PropTypes.string.isRequired,

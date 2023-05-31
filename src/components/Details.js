@@ -1,12 +1,43 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Navigation from './Navigation';
+// import { filter } from '../Redux/Currencies/displayedSlice';
 
 const Details = () => {
-  const { arr, currencies } = useSelector((state) => state.displayed);
-
+  // const dispatch = useDispatch();
   const [search, setSearch] = useState('');
+  const [display, setDisplay] = useState([]);
+
+  const { arr, currencies } = useSelector((state) => state.displayed);
   const header = {};
+
+  useEffect(() => {
+    setDisplay(arr);
+  }, [arr]);
+
+  function handleChange(e) {
+    const inpValue = e.target.value;
+    setSearch(inpValue);
+
+    const newArr = arr.filter(({
+      id, name,
+    }) => {
+      // make same case
+      const testid = id.toLowerCase();
+      const testname = name.toLowerCase();
+      const searched = search.toLowerCase();
+      // filter
+      if (testid.includes(searched) || testname.includes(searched)) {
+        return true;
+      }
+      return false;
+    });
+    if (inpValue === '') {
+      setDisplay(arr);
+    } else {
+      setDisplay(newArr);
+    }
+  }
 
   if (currencies === 'local') {
     header.name = 'Local Currencies';
@@ -45,12 +76,12 @@ const Details = () => {
             placeholder={`${currencies === 'local'
               ? 'Search Local Currencies'
               : 'Search Global Currencies'}`}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => handleChange(e)}
           />
         </label>
       </form>
       <ul className="list">
-        {arr.map((cur) => (
+        {display.map((cur) => (
           <li key={cur.id}>
             <p className="name">{cur.name}</p>
             <p className="rate">{cur.rate}</p>

@@ -167,8 +167,11 @@ If you like this project, you can show your support by giving this project's rep
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
+I would like to acknowledge the author of the design that I used to implement my features. 
 
-I would like to thank Microverse for the outstanding collection of information they have provided that enabled me to create the project.
+- [Nelson Sakwa](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
+
+I would also like to thank Microverse for the outstanding collection of information they have provided that enabled me to create the project.
 
 
 <!-- LICENSE -->

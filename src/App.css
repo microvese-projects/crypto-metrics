@@ -68,6 +68,21 @@
   font-size: calc(1rem + 0.2vw);
 }
 
+.more {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.more:hover {
+  color: #e54f8a;
+}
+
+a {
+  color: #fff;
+}
+
 .homecard .more {
   width: max-content;
   position: absolute;
@@ -154,22 +169,7 @@ form {
   border: none;
 }
 
-.more {
-  border: 1px solid #fff;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-}
-
-.more:hover {
-  color:#e54f8a
-}
-
 .more svg {
   height: 20px;
   cursor: pointer;
-}
-
-a {
-  color: #fff;
 }

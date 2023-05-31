@@ -39,8 +39,12 @@ const Home = () => {
         <h3>Stats by Market</h3>
       </div>
       <div className="homeCardsContainer">
-        <HomeCard name="Local Market" data={localRates} />
-        <HomeCard name="Global Market" data={globalRates} />
+        <div className="card">
+          <HomeCard name="Local Market" data={localRates} />
+        </div>
+        <div className="card">
+          <HomeCard name="Global Market" data={globalRates} />
+        </div>
       </div>
     </div>
   );

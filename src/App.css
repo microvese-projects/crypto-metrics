@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   padding-right: 20px;
   font-size: 1.5rem;
   color: #fff;
@@ -29,17 +29,50 @@
 .homeCardsContainer {
   display: flex;
   justify-content: center;
-  gap: 5px;
+  margin-top: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 0 8px 0 greenyellow;
 }
 
 .homecard {
   cursor: pointer;
   min-height: 150px;
-  width: 100%;
+  width: 50vw;
+  max-width: 400px;
   padding: 20px;
   border: none;
   box-shadow: 0 0 3px 1px #710c34;
   background-color: #710c34;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.card:nth-child(odd) .homecard {
+  background-color: #e54f8a;
+  background-image: linear-gradient(90deg, #e54f8a, rgba(113, 12, 52, 0.5)), url('../public/images/card.jpg');
+}
+
+.card:nth-child(even) .homecard {
+  background-image: linear-gradient(90deg, #7a0836, rgba(173, 8, 74, 0.8)), url('../public/images/card.jpg');
+}
+
+.homecard .cardContent {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  text-align: right;
+  font-size: calc(1rem + 0.2vw);
+}
+
+.homecard .more {
+  width: max-content;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   color: #fff;
 }
 
@@ -128,7 +161,15 @@ form {
   place-items: center;
 }
 
+.more:hover {
+  color:#e54f8a
+}
+
 .more svg {
   height: 20px;
   cursor: pointer;
+}
+
+a {
+  color: #fff;
 }

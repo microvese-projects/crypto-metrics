@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Navigation from './Navigation';
-// import { filter } from '../Redux/Currencies/displayedSlice';
 
 const Details = () => {
-  // const dispatch = useDispatch();
   const [search, setSearch] = useState('');
   const [display, setDisplay] = useState([]);
 

@@ -77,8 +77,8 @@ This section Provides the details about the currencies in a certain category.
 <!-- Video Walkthrough -->
 ## Video Walkthrough <a name="outline-video"></a>
 
-> Click on the [link](https://www.loom.com/share/92dccfd50e4f4f179f54d51ac98e7e8c) to watch an outline video of my project.
-[Outline Video]()
+> Click on the [link](https://www.loom.com/share/f5ab1e06615d4c30b0eec9025b4f861f) to watch an outline video of my project.
+[Outline Video](https://www.loom.com/share/f5ab1e06615d4c30b0eec9025b4f861f)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

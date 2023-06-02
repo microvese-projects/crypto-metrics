@@ -11,7 +11,6 @@ function Converter() {
   return (
     <div className="converter">
       <Navigation name="Currency Converter" path="/details" />
-      {/* <h2>Currency Converter</h2> */}
       <form
         className="conversionForm"
         onSubmit={(e) => e.preventDefault()}

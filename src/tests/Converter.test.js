@@ -45,8 +45,6 @@ test('renders the Converter component with initial values', () => {
   const convertedInput = screen.getByLabelText(/your converted value in/i);
   expect(convertedInput).toBeInTheDocument();
   expect(convertedInput).toHaveValue(0);
-
-  // Add more assertions for specific input elements if needed
 });
 
 test('updates the converted value when the value input changes', () => {
@@ -82,6 +80,4 @@ test('updates the converted value when the value input changes', () => {
 
   // The converted value should update accordingly
   expect(convertedInput).toHaveValue(6.15);
-
-  // Add more assertions or test cases for different input values if needed
 });

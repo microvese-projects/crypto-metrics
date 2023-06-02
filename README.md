@@ -32,7 +32,7 @@
 
 # 📖 Metrics App <a name="about-project"></a>
 
-**Metrics App** is a project that was created to show the different exchange rates between the different currencies of the world and the US Dollar.
+**Metrics App** is a project that was created to show the different exchange rates between the different currencies of the world and the US Dollar. Using the app, a user can convert any given amount of dollars to the selected currency.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -59,6 +59,8 @@ This section allows the user to change between the differently rendered pages.
 This section shows a list of cards that provide links to the the different list of currency details.
 - **[Details]**
 This section Provides the details about the currencies in a certain category. 
+- **[Converter]**
+This section allows the user to get convert a value of a given amount of dollars to the selected currency.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

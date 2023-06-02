@@ -96,7 +96,7 @@ ul {
 }
 
 .navbar {
-  max-width: 100vw;
+  min-width: 100vw;
   background-color: #e54f8a;
   color: #fff;
   padding: 10px 5px;
@@ -129,7 +129,7 @@ li svg {
   color: #fff;
 }
 
-.list li {
+.list li a {
   display: flex;
   gap: 10px;
   justify-content: space-between;
@@ -139,6 +139,7 @@ li svg {
   align-items: center;
   padding-inline: 10px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: none;
 }
 
 .list li:nth-child(Even) {
@@ -172,4 +173,37 @@ form {
 .more svg {
   height: 20px;
   cursor: pointer;
+}
+
+.converter {
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+.conversionForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.conversionForm label input {
+  min-width: 300px;
+  max-width: 500px;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 5px;
+  display: flex;
+}
+
+.conversionForm label input:disabled {
+  font-weight: bold;
+  color: black;
+}
+
+.conversionForm label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-block: 10px;
+  text-align: center;
 }

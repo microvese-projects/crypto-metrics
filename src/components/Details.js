@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
+import { setRate } from '../Redux/Currencies/displayedSlice';
 
 const Details = () => {
+  const dispatch = useDispatch();
   const [search, setSearch] = useState('');
   const [display, setDisplay] = useState([]);
 
@@ -80,14 +83,24 @@ const Details = () => {
       </form>
       <ul className="list">
         {display.map((cur) => (
-          <li key={cur.id}>
-            <p className="name">{cur.name}</p>
-            <p className="rate">{cur.rate}</p>
-            <div className="more">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-              </svg>
-            </div>
+          <li
+            key={cur.id}
+          >
+            <Link
+              to="converter"
+              onClick={() => dispatch(setRate({
+                rate: cur.rate,
+                name: cur.id,
+              }))}
+            >
+              <p className="name">{cur.name}</p>
+              <p className="rate">{cur.rate}</p>
+              <div className="more">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                </svg>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>

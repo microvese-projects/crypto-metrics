@@ -3,6 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   arr: [],
   currencies: null,
+  converted: {
+    id: null,
+    rate: null,
+  },
 };
 
 const displayedSlice = createSlice({
@@ -18,8 +22,11 @@ const displayedSlice = createSlice({
         state.currencies = 'global';
       }
     },
+    setRate: (state, action) => {
+      state.converted = action.payload;
+    },
   },
 });
 
-export const { change } = displayedSlice.actions;
+export const { change, setRate } = displayedSlice.actions;
 export default displayedSlice.reducer;
